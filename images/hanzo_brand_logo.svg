@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <defs>
+    <!-- Gold Text Gradient for Hanzo -->
+    <linearGradient id="goldTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFF5E0" />
+      <stop offset="75%" stop-color="#E8C380" />
+      <stop offset="100%" stop-color="#D4A359" />
+    </linearGradient>
+
+    <!-- Paper Circle Gradient for Emblem -->
+    <radialGradient id="paperGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFDF9" />
+      <stop offset="70%" stop-color="#FAF1DF" />
+      <stop offset="100%" stop-color="#EFE0C2" />
+    </radialGradient>
+
+    <!-- Gold Accent Line Gradient -->
+    <linearGradient id="goldLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4A359" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#FFE6B0" stop-opacity="1" />
+      <stop offset="100%" stop-color="#D4A359" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Crimson Outer Brush Ring Gradient -->
+    <linearGradient id="crimsonRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E60021" />
+      <stop offset="50%" stop-color="#990000" />
+      <stop offset="100%" stop-color="#550000" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter for 3D Text Depth -->
+    <filter id="shadowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+
+    <!-- Glow Filter for White Subtitle -->
+    <filter id="whiteGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.9" />
+    </filter>
+  </defs>
+
+  <!-- Left Circular Calligraphic Emblem (Transparent outer, paper inner) -->
+  <g transform="translate(10, 0)">
+    <!-- Outer Brush Splatter Rings -->
+    <circle cx="50" cy="50" r="44" fill="none" stroke="url(#crimsonRingGrad)" stroke-width="4.5" stroke-dasharray="180 15 40 10 90 20" transform="rotate(-40 50 50)" opacity="0.95" />
+    <circle cx="50" cy="50" r="41" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.7" />
+    <circle cx="50" cy="50" r="39" fill="url(#paperGrad)" stroke="#D4A359" stroke-width="1.5" filter="url(#shadowFilter)" />
+    
+    <!-- Chinese Calligraphy Character 汉 -->
+    <text x="50" y="63" font-family="'Noto Sans SC', 'Kaiti SC', 'SimSun', serif" font-weight="900" font-size="42" fill="#B80000" text-anchor="middle" style="user-select: none;">汉</text>
+  </g>
+
+  <!-- Right App Title "Hanzo" -->
+  <g transform="translate(108, 0)">
+    <text x="0" y="55" font-family="'Outfit', 'Georgia', 'Brush Script MT', serif" font-weight="900" font-size="46" font-style="italic" fill="url(#goldTextGrad)" filter="url(#shadowFilter)" letter-spacing="1">Hanzo</text>
+
+    <!-- Subtitle Row: Flanking Gold Lines & Pure Crisp White "THANH AUTOMATION" -->
+    <g transform="translate(0, 76)">
+      <!-- Left Gold Line -->
+      <line x1="0" y1="-4" x2="35" y2="-4" stroke="url(#goldLineGrad)" stroke-width="2" stroke-linecap="round" />
+      
+      <!-- Prominent Bright Pure White Subtitle Text -->
+      <text x="105" y="0" font-family="'Outfit', 'Inter', sans-serif" font-weight="800" font-size="11.5" fill="#FFFFFF" letter-spacing="2.8" text-anchor="middle" filter="url(#whiteGlow)" style="user-select: none;">THANH AUTOMATION</text>
+      
+      <!-- Right Gold Line -->
+      <line x1="175" y1="-4" x2="210" y2="-4" stroke="url(#goldLineGrad)" stroke-width="2" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

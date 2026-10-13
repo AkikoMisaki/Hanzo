@@ -1,0 +1,200 @@
+{
+   "checksum": "3c8589941717165d40858523201b4dc7",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13230395259791579",
+               "date_last_used": "0",
+               "guid": "513852ae-364c-46d2-8350-18b5288ba27c",
+               "id": "11",
+               "name": "StableHost",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://billing.stablehost.com/clientarea.php",
+               "visit_count": 0
+            }, {
+               "date_added": "13230395334159966",
+               "date_last_used": "0",
+               "guid": "afce1afe-87eb-4d61-88ea-bc67631d9313",
+               "id": "12",
+               "name": "Login | StableHost",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://www.stablehost.com/login.php",
+               "visit_count": 0
+            }, {
+               "children": [  ],
+               "date_added": "13299692594458058",
+               "date_last_used": "0",
+               "date_modified": "13299692594458058",
+               "guid": "256a5fd9-efe0-4ca5-8274-dcee9412d7e6",
+               "id": "13",
+               "name": "New folder",
+               "source": "unknown",
+               "type": "folder"
+            } ],
+            "date_added": "13236246778153095",
+            "date_last_used": "0",
+            "date_modified": "13236246778153095",
+            "guid": "ba4b0af2-ef90-45b0-b103-7a71071d23ad",
+            "id": "10",
+            "name": "StableHost",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13370077925679286",
+               "date_last_used": "0",
+               "guid": "2dc876eb-9ad3-42ae-986c-b2e9bff6df24",
+               "id": "15",
+               "name": "ASUS Homepage",
+               "show_icon": false,
+               "source": "import_fre",
+               "type": "url",
+               "url": "http://www.asus.com/",
+               "visit_count": 0
+            }, {
+               "date_added": "13370077925694910",
+               "date_last_used": "0",
+               "guid": "a124eabc-0435-45b0-a8af-38632c696d71",
+               "id": "16",
+               "name": "ASUS Member",
+               "show_icon": false,
+               "source": "import_fre",
+               "type": "url",
+               "url": "https://account.asus.com/",
+               "visit_count": 0
+            } ],
+            "date_added": "13435346191645457",
+            "date_last_used": "0",
+            "date_modified": "0",
+            "guid": "e8975d73-cb96-4b16-8c9e-a75bb660e612",
+            "id": "14",
+            "name": "ASUS E-Service",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13299692579813212",
+               "date_last_used": "0",
+               "guid": "f10f80e3-50b4-4255-9088-ad67760fafb5",
+               "id": "18",
+               "name": "Được chia sẻ với tôi - Google Drive",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "https://drive.google.com/drive/u/0/shared-with-me",
+               "visit_count": 0
+            } ],
+            "date_added": "13299692594458364",
+            "date_last_used": "0",
+            "date_modified": "13299692594458364",
+            "guid": "5b67ae22-deef-47c6-8a92-0c2c8eb58835",
+            "id": "17",
+            "name": "dct",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13371793056871853",
+               "date_last_used": "0",
+               "guid": "7b409462-3542-4bed-b8e5-9d09529b0564",
+               "id": "20",
+               "name": "Dell Auction",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www.dellauction.com/",
+               "visit_count": 0
+            }, {
+               "date_added": "13371793056871853",
+               "date_last_used": "0",
+               "guid": "bfc1d64a-4c34-41da-ae77-0c34f104f94b",
+               "id": "21",
+               "name": "Dell",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www.dell.com/",
+               "visit_count": 0
+            }, {
+               "date_added": "13371793056871853",
+               "date_last_used": "0",
+               "guid": "ce521e69-e5c7-4bfb-a73a-03876b2f5553",
+               "id": "22",
+               "name": "Support.Dell.Com",
+               "show_icon": false,
+               "source": "sync",
+               "type": "url",
+               "url": "http://www.dell.com/support/home",
+               "visit_count": 0
+            } ],
+            "date_added": "13371887362177517",
+            "date_last_used": "0",
+            "date_modified": "13371887362177517",
+            "guid": "eff43095-164d-4fb4-a42d-022714e33129",
+            "id": "19",
+            "name": "Dell",
+            "source": "unknown",
+            "type": "folder"
+         }, {
+            "date_added": "13394690640087079",
+            "date_last_used": "0",
+            "guid": "2f5ef3f3-fe1b-47fa-bbd3-91233feac1b3",
+            "id": "23",
+            "name": "Microsoft Teams Meeting | Microsoft Teams",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://teams.microsoft.com/light-meetings/launch?agent=web&version=25051800200&coords=eyJtZWV0aW5nVXJsIjoiaHR0cHM6Ly90ZWFtcy5taWNyb3NvZnQuY29tL21lZXQvNDgyNDAzNDUwMTQ2P3A9RVB4V1VEcnFDaGQ4REVHaWRXJmFub249dHJ1ZSZsaWdodEV4cGVyaWVuY2U9dHJ1ZSZjb3JyZWxhdGlvbklkPWVmYWE5Y2FhLTRiYmUtNGIzMS04YWVjLTYxODBiYmY1MTA0NSZhbm9uPXRydWUiLCJtZWV0aW5nQ29kZSI6IjQ4MjQwMzQ1MDE0NiIsInBhc3Njb2RlIjoiRVB4V1VEcnFDaGQ4REVHaWRXIn0%3D&deeplinkId=f1e27d2c-16ea-4cc3-92d9-5d7e3e792d05&correlationId=efaa9caa-4bbe-4b31-8aec-6180bbf51045",
+            "visit_count": 1
+         } ],
+         "date_added": "13435346185467941",
+         "date_last_used": "0",
+         "date_modified": "13394690640087079",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13435346185467941",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13435346185467941",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13435346185467941",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "5",
+         "name": "Workspaces",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCFhnHPWgAQAAEgAqGEwzcDlpOWp5MEY5MEVTMFNiRjUvMXc9PUgDoAYHEo4BCAUSiQEKHHdSQnJaTCs2UEE5YXZLZ2pOUDdKWERMY2Z2cz0SJDRhMGRkODZmLWYyZTUtNTZmOC1hYTdiLThjYjc2NjViMjVhMxgAIAAoADDXzvGojzQ44NbxqI80QODW8aiPNEocbm14NjVzUUR2eEk4VGdFZXYrQStudHRvU240PVoAZQAAAADCPgJgABKtAQgXEqgBChxyVEpkcmgxYkUwa0VTY0toTXRFTDB2U2xkVGs9EiQyZjVlZjNmMy1mZTFiLTQ3ZmEtYmJkMy05MTIzM2ZlYWMxYjMYACAAKAAw383CiPgyOPfSwoj4MkD30sKI+DJKHHYvcmNRZmRNdDdIU0ljWUE0MXhMQXNPQ0gzVT1aHyId92s0Mldka2RMTVMySWh3cFQrOHBBWDN3U0NUTT1l/utTHMI+AmAFEo4BCAISiQEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SJDVjN2RmMzM2LWI1ODUtNTUwNS05NDE5LTkxZWQyMzNiYTY1NBgAIAAoADC+hrD0sDA40ere/usvQNHq3v7rL0ocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAADCPgJgABKsAQgVEqcBChxDV1ZrUWMrSkdpRWhGL3VGZ0VvcHZKdXZlVVE9EiRiZmMxZDY0YS00YzM0LTQxZGEtYWU3Ny0wYzM0ZjEwNGY5NGIYACAAKAAwitD9nLQyOMPf/Zy0MkDD3/2ctDJKHGZXZ1RpQzRVTEdXcHFxbU9Xc0cwdGFFdlpOMD1aHiIcdHdxUXJrQWlMTEVGWnlTU3RkZ3BVYTI5YkpBPWUAAAAAwj4CYAUSrQEIExKoAQocRmJ6TGhjb3dOWFhHb2pZRTNNSHJzaUZwWXFBPRIkZWZmNDMwOTUtMTY0ZC00ZmI0LWE0MmQtMDIyNzE0ZTMzMTI5GAAgACgAMIjQ/Zy0MjiQ3/2ctDJAkN/9nLQyShxQWHVJdXh3VzVWdlhCZ0thOXF1ZHdZUkhrY1U9Wh8iHe4xV1JGTUZ6VjkvWFpTVWloQmY1MUZjU3RaRkk9ZQAAAADCPgJgABKtAQgWEqgBChx0c3ZRNi9tblZRSnozMUxQVXZuRmcyNWxTWjA9EiRjZTUyMWU2OS1lNWM3LTRiZmItYTczYS0wMzg3NmIyZjU1NTMYACAAKAAwi9D9nLQyONzf/Zy0MkDc3/2ctDJKHHZadG92Wk5LSmMvQisvNEE4SGNpOTk4WVRHWT1aHyIdumpXVGVoWGo3NmJqMy9xb0RUcFpUY1dSd3hOTT1lAAAAAMI+AmAFEqwBCBISpwEKHFlDMFVrTm0rYXYyR3VUemh4dGxjVklRWEZRST0SJGYxMGY4MGUzLTUwYjQtNDI1NS05MDg4LWFkNjc3NjBmYWZiNRgAIAAoADDT8uSZsTA4iqP1lZYwQIqj9ZWWMEoceEsxQUxPQnNQOURyK0FUS09OS1hWZVhMUkVNPVoeIhxnNHRHL1BxMVViWmVTZ3plRWdyd2VSR3RIcDA9ZfqR3tvCPgJgBRKOAQgBEokBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9EiQ4YWZiZjdlZS1lZDA5LTUzMTEtYTkyNS1lZWEyMTc3ZmUwMTcYACAAKAAwvoaw9LAwOMHq3v7rL0DB6t7+6y9KHGFSQ1dMZ2hGOWI1SW5xS0lEdnVKL2p2UWtGYz1aAGUAAAAAwj4CYAASrQEIERKoAQocRTNaaTZpaytUdHo0MXgwZytobGJYYkFaZVdFPRIkNWI2N2FlMjItZGVlZi00N2M2LThhOTItMGMyYzhlYjU4ODM1GAAgACgAMMWf9pWWMDiEofaVljBAhKH2lZYwShx6QVR5VkxaMmdHdldvbTVwc2V3dEg2akpJNkU9Wh8iHdx0WUIvL2ljelkvN2NRdFdZUWpoY0xaSmJ2Sjg9ZQAAAADCPgJgABKsAQgQEqcBChxPZExxRGlmUm4xMS91c20ySVJNWE4yd2dSc0k9EiRhMTI0ZWFiYy0wNDM1LTQ1YjAtYThhZi0zODYzMmM2OTZkNzEYACAAKAAwqYb34+4vOIKK9+PuL0CCivfj7i9KHDViRm1wMzJLTnlUYmF6eGw4MXpPNmE5ZnN4RT1aHiIceXA5aTY0Qys1ZWcrWHBjaWFpb2pQZzl5Zi8wPWUAAAAAwj4CYAISrAEICxKnAQocUGs2ZEFYenYzam1DdmgxbVh5TVlUaFp5ZDlNPRIkNTFiNDg5MDctNWI3NC00MTQxLThiNDctY2U3ODIwYTBhMzVhGAAgACgAMIWh1OipLji+697+6y9Avuve/usvShxqQjhmUXkvSHdQMzdkUXRjNnVrekdlVitCaUE9Wh4iHEcyYnJLbTZvcGFDUXRFOEJ0TCtCOTlnSDNEUT1lDh0q3MI+AmAFEqwBCA8SpwEKHEd1WFArTi9qQklqQWNVZzM3U0hYbmNiVHdaMD0SJDJkYzg3NmViLTlhZDMtNDJhZS05ODZjLWIyZTliZmY2ZGYyNBgAIAAoADCphvfj7i8404n34+4vQNOJ9+PuL0ocL3RTR1hHbmVHZ3ZPaitleGpYZHpjQ2Q2YUJ3PVoeIhxKaXNkcHl3cmJDTC9lTjBDV1gxcnZ1bTZLWHc9ZQAAAADCPgJgAhKsAQgUEqcBChx0RDdxTjdJdnFUcVVTV2p6KzJiVDhRdjdOYjA9EiQ3YjQwOTQ2Mi0zNTQyLTRiZWQtYjhlNS05ZDA5NTI5YjA1NjQYACAAKAAwidD9nLQyOKnf/Zy0MkCp3/2ctDJKHFFjN1hRTy8xNTVPRFBHRHVvenlxM3ZtMmJmcz1aHiIcaFY5bHZXVmIyLzNybGg5VjBqUVFBcUNGODJZPWUAAAAAwj4CYAUSrAEIDRKnAQocSiszS2xwUkw3VjB0czRPME9hNmVaUDE4OVBJPRIkMjU2YTVmZDktZWZlMC00Y2E1LTgyNzQtZGNlZTk0MTJkN2U2GAAgACgAMMWf9pWWMDizofaVljBAs6H2lZYwShxyVmpwb3hIZG5VMVdpcjFFTVVqaDdGbndJSnc9Wh4iHGk1YmV6d1ZQTldLM21aQ1dFWUk4NWxoQ3lSVT1lAAAAAMI+AmAAEqwBCAwSpwEKHHlhQlhSaW15WFk3a1M1WWJnc0UrUkhUYmZwWT0SJDc5ZWYxYThmLTRhZjItNGU5NC1iZmQ4LTY4OTkxNzczYjc0MRgAIAAoADCGodToqS44zeve/usvQM3r3v7rL0ocZUQ3WTkrcDZxK3lOTDVJTit3Q2pGZ2xkYUtjPVoeIhxXVE5ibWRPVzZ6Zkh2K3IycDR5cmI1eTF3aUU9ZS/ygtHCPgJgBRKtAQgOEqgBChxKYnZabXNmbE1hU0c2TDN6TDVqSHQ0SGhwSU09EiRlODk3NWQ3My1jYjk2LTRiMTYtOGM5ZS1hNzViYjY2MGU2MTIYACAAKAAwqYb34+4vONyG9+PuL0Dchvfj7i9KHEVRM1FWV2s1TE9PY0FmeHN0Rmh3eTR1Wk15UT1aHyIduWc5RUcrUndEeW9acUJPYWpCTHI3bDR6MGFzMD1lAAAAAMI+AmAAEqwBCAoSpwEKHHRGT3pRdjlKaVFsNXVZRmZrS3c2K2pPOExlWT0SJDViYjYxMGY2LThkYmEtNGNlZS1hNDc0LWUzZWQxMGY0M2ZmZBgAIAAoADCEodToqS44ruve/usvQK7r3v7rL0ocekxMOGlNK1ZtRXRRaVpLaWtIV3BvR0VQTkVFPVoeIhxzRHdsK0NraFhYRTZyUG85aTdYby9Dd1I5dHM9ZQAAAADCPgJgABKOAQgDEokBChxuamdEdTg4ZUNydlhwODZwRDdmSEdjcUZwODg9EiQ5Nzc0OTAxYy05OWNmLTUxYjEtOWYzZC0xYTcwODVmOTMxNjYYACAAKAAwvoaw9LAwOJ/r3v7rL0Cf697+6y9KHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAwj4CYAAwADgA",
+   "version": 1
+}

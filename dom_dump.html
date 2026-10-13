@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanzo</title>
+  <meta name="description" content="á»¨ng dá»¥ng há»c tiáº¿ng Trung hiá»‡n Ä‘áº¡i vá»›i bá»™ tá»« vá»±ng tĂ¹y chá»‰nh, láº·p láº¡i ngáº¯t quĂ£ng SRS, Ă´n táº­p 4 ká»¹ nÄƒng Nghe - NĂ³i - Äá»c - Viáº¿t, tá»« Ä‘iá»ƒn Trung-Viá»‡t vĂ  module Tiáº¿ng Trung CĂ´ng sá»Ÿ.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700;900&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  
+  <!-- PDF.js CDN for extracting text from PDF files -->
+  <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+
+  <!-- HanziWriter CDN for Stroke Order Animation & Tracing -->
+  <script defer="" src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+
+  <!-- SheetJS CDN for Excel Import/Export (.xlsx/.xls/.csv) -->
+  <script defer="" src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Pinyin Pro CDN -->
+  <script defer="" src="https://unpkg.com/pinyin-pro"></script>
+
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+            heading: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+            pinyin: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css?v=3.4">
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Verdana, Geneva, Tahoma, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.right-0{right:0px}.top-full{top:100%}.z-50{z-index:50}.mx-1{margin-left:0.25rem;margin-right:0.25rem}.my-auto{margin-top:auto;margin-bottom:auto}.ml-0\.5{margin-left:0.125rem}.mt-2\.5{margin-top:0.625rem}.mt-auto{margin-top:auto}.flex{display:flex}.hidden{display:none}.h-10{height:2.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.max-h-\[340px\]{max-height:340px}.max-h-\[70vh\]{max-height:70vh}.w-10{width:2.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-\[1\.5px\]{width:1.5px}.w-\[440px\]{width:440px}.w-full{width:100%}.min-w-0{min-width:0px}.max-w-2xl{max-width:42rem}.max-w-\[92vw\]{max-width:92vw}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-rose-800{--tw-border-opacity:1;border-color:rgb(159 18 57 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-white\/30{border-color:rgb(255 255 255 / 0.3)}.bg-slate-200\/90{background-color:rgb(226 232 240 / 0.9)}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-red-700{--tw-gradient-from:#b91c1c var(--tw-gradient-from-position);--tw-gradient-to:rgb(185 28 28 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-rose-600{--tw-gradient-to:rgb(225 29 72 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #e11d48 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-red-600{--tw-gradient-to:#dc2626 var(--tw-gradient-to-position)}.stroke-current{stroke:currentColor}.p-3{padding:0.75rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-\[\#E60021\]{--tw-text-opacity:1;color:rgb(230 0 33 / var(--tw-text-opacity, 1))}.text-rose-100{--tw-text-opacity:1;color:rgb(255 228 230 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:text-red-600:hover{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.hover\:text-rose-800:hover{--tw-text-opacity:1;color:rgb(159 18 57 / var(--tw-text-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}@media (min-width: 640px){.sm\:p-4{padding:1rem}.sm\:p-6{padding:1.5rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}}</style></head>
+<body>
+
+  <!-- App Layout (Sidebar + Topbar + Main Container) -->
+  <div class="app-layout">
+    
+    <!-- Left Sidebar (Deep Crimson Red Oriental Palette) -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <a href="#" class="flex align-center gap-2 text-decoration-none" id="brand-home-link">
+          <div class="brand-logo-circle">æ±‰</div>
+          <div>
+            <div class="brand-name">Hanzo</div>
+            <div class="brand-tagline">THANH AUTOMATION</div>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="sidebar-item active nav-item" data-tab="dashboard">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          </span>
+          <span class="nav-text">Trang chá»§</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="topics">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          </span>
+          <span class="nav-text">Chá»§ Ä‘á» tá»« vá»±ng</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="grammar">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+          </span>
+          <span class="nav-text">Há»c ngá»¯ phĂ¡p</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="reading">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          </span>
+          <span class="nav-text">Äá»c &amp; Dá»‹ch</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="schedule">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          </span>
+          <span class="nav-text">LĂªn lá»‹ch há»c</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="practice">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+          </span>
+          <span class="nav-text">Ă”n táº­p &amp; Kiá»ƒm tra</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="analytics">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          </span>
+          <span class="nav-text">Tiáº¿n Ä‘á»™ há»c táº­p</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="music">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 .895-2 3-2 3 .895 3 2zm12 0c0 1.105-1.343 2-3 2s-3-.895-3-2 .895-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+          </span>
+          <span class="nav-text">Há»c hĂ¡t</span>
+        </button>
+
+        
+        <div class="sidebar-divider"></div>
+
+        <button class="sidebar-item nav-item" data-tab="dictionary">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </span>
+          <span class="nav-text">Tá»« Ä‘iá»ƒn HSK</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="chatgpt">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </span>
+          <span class="nav-text">TĂ¬m kiáº¿m GPT</span>
+        </button>
+        <button class="sidebar-item nav-item" data-tab="settings">
+          <span class="nav-icon">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </span>
+          <span class="nav-text">CĂ i Ä‘áº·t</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace Right Area -->
+    <div class="app-main flex-1 flex flex-col min-w-0">
+      
+      <!-- Top Header Bar -->
+      <header class="app-topbar flex align-center justify-between px-6 py-3">
+        <!-- Topbar Achievement Stats Bar (Matching Reference Image Design) -->
+        <div class="topbar-stats flex items-center gap-3 flex-wrap" id="header-achievement-stats">
+          <div class="stat-pill-card" title="Tá»« vá»±ng Ä‘Ă£ há»c">
+            <div class="stat-pill-icon">
+              <svg class="w-5 h-5 text-[#E60021]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <div class="stat-pill-divider"></div>
+            <div class="stat-pill-content">
+              <span class="stat-pill-val" id="header-stat-words">42</span>
+              <span class="stat-pill-label">Tá»« vá»±ng Ä‘Ă£ há»c</span>
+            </div>
+          </div>
+
+          <div class="stat-pill-card" title="Chá»§ Ä‘á» Ä‘Ă£ hoĂ n thĂ nh">
+            <div class="stat-pill-icon">
+              <svg class="w-5 h-5 text-[#E60021]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+              </svg>
+            </div>
+            <div class="stat-pill-divider"></div>
+            <div class="stat-pill-content">
+              <span class="stat-pill-val" id="header-stat-topics">8</span>
+              <span class="stat-pill-label">Chá»§ Ä‘á» Ä‘Ă£ hoĂ n thĂ nh</span>
+            </div>
+          </div>
+
+          <div class="stat-pill-card" title="Thá»i gian há»c tuáº§n nĂ y">
+            <div class="stat-pill-icon">
+              <svg class="w-5 h-5 text-[#E60021]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path>
+              </svg>
+            </div>
+            <div class="stat-pill-divider"></div>
+            <div class="stat-pill-content">
+              <span class="stat-pill-val" id="header-stat-time">2g 30p</span>
+              <span class="stat-pill-label">Thá»i gian há»c tuáº§n nĂ y</span>
+            </div>
+          </div>
+
+          <div class="stat-pill-card" title="Tiáº¿n Ä‘á»™ káº¿ hoáº¡ch tuáº§n">
+            <div class="stat-pill-icon">
+              <svg class="w-5 h-5 text-[#E60021]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5 9.2h3V19H5zM10.6 5h3v14h-3zM16.2 13h3v6h-3z"></path>
+              </svg>
+            </div>
+            <div class="stat-pill-divider"></div>
+            <div class="stat-pill-content">
+              <span class="stat-pill-val" id="header-stat-progress">68%</span>
+              <span class="stat-pill-label">Tiáº¿n Ä‘á»™ káº¿ hoáº¡ch tuáº§n</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="topbar-user flex items-center gap-3">
+          <!-- 1. STREAK PILL (Matching Reference Image) -->
+          <div class="header-streak-pill" id="user-streak-display" title="Chuá»—i ngĂ y há»c liĂªn tiáº¿p">
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+              <path d="M13.5 1.5s0 2.5-2.5 4.5c-2.5 2-4.5 4.5-4.5 8 0 4.14 3.36 7.5 7.5 7.5s7.5-3.36 7.5-7.5c0-4-3-7.5-8-12.5zm1 18c-2.48 0-4.5-2.02-4.5-4.5 0-1.8 1.12-3.36 2.5-4 0 2 1.5 3.5 3.5 3.5s3.5-1.5 3.5-3.5c.88.92 1.5 2.15 1.5 3.5 0 2.48-2.02 4.5-4.5 4.5z" fill="url(#fireGradient)"></path>
+              <defs>
+                <linearGradient id="fireGradient" x1="6.5" y1="1.5" x2="18.5" y2="21.5" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF3B56"></stop>
+                  <stop offset="0.5" stop-color="#E60021"></stop>
+                  <stop offset="1" stop-color="#FF9900"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="font-extrabold text-sm text-[#E60021] tracking-tight whitespace-nowrap" id="streak-text-content">1 NgĂ y</span>
+          </div>
+
+          <!-- 2. NOTIFICATION BELL BUTTON (Matching Reference Image) -->
+          <div class="relative" id="notification-bell-wrapper">
+            <button class="header-notif-btn" id="header-notification-btn" title="ThĂ´ng bĂ¡o há»‡ thá»‘ng">
+              <svg class="w-5 h-5 text-[#E60021] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path>
+              </svg>
+              <span class="header-notif-badge hidden" id="header-notification-badge">0</span>
+            </button>
+
+            <!-- Popup ThĂ´ng BĂ¡o Dropdown Popover -->
+            <div id="header-notification-popover" class="header-notification-popover hidden absolute right-0 top-full mt-2.5 w-[440px] max-w-[92vw] bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 overflow-hidden transform transition-all duration-200">
+              <!-- Popover Header (TĂ´ng Ä‘á» tráº¯ng sang trá»ng & Icon linh hoáº¡t) -->
+              <div class="px-4 py-3 bg-gradient-to-r from-red-700 via-rose-600 to-red-600 text-white flex items-center justify-between shadow-md">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-7 h-7 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-xs shadow-inner">
+                    đŸ””
+                  </div>
+                  <h4 class="font-black text-xs text-white tracking-wider uppercase drop-shadow-xs">THĂ”NG BĂO Há»† THá»NG</h4>
+                  <span class="text-2xs bg-white text-rose-700 font-extrabold px-2 py-0.5 rounded-full shadow-xs" id="popover-notification-count">0</span>
+                </div>
+                <button id="btn-close-notification-popover" class="text-white/80 hover:text-white text-xs font-bold w-6 h-6 rounded-full hover:bg-white/20 flex items-center justify-center transition" title="ÄĂ³ng">âœ•</button>
+              </div>
+
+              <!-- Popover Body List (Cuá»™n dá»c khi > 4 thĂ´ng bĂ¡o) -->
+              <div class="p-3 max-h-[340px] overflow-y-auto space-y-2 text-xs" id="header-notification-list">
+                <!-- Dynamic notification items rendered here -->
+              </div>
+
+              <!-- Popover Footer -->
+              <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-2xs text-slate-500 whitespace-nowrap gap-2">
+                <span id="popover-notification-time" class="font-medium whitespace-nowrap">Cáº­p nháº­t: --:-- - --/--/----</span>
+                <div class="flex items-center gap-2 shrink-0">
+                  <button id="btn-clear-all-notifications" class="font-bold text-slate-400 hover:text-red-600 hover:underline transition flex items-center gap-1 whitespace-nowrap" title="XĂ³a toĂ n bá»™ thĂ´ng bĂ¡o">đŸ—‘ï¸ XĂ³a táº¥t cáº£</button>
+                  <span class="text-slate-300">|</span>
+                  <button id="btn-mark-all-notifications-read" class="font-bold text-rose-600 hover:text-rose-800 hover:underline transition whitespace-nowrap">ÄĂ¡nh dáº¥u Ä‘Ă£ Ä‘á»c táº¥t cáº£</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VERTICAL DIVIDER -->
+          <div class="w-[1.5px] h-7 bg-slate-200/90 shrink-0 mx-1"></div>
+
+          <!-- 3. USER PROFILE PILL BADGE (Matching Reference Image) -->
+          <div class="header-user-pill" id="header-user-profile-btn" title="Quáº£n lĂ½ tĂ i khoáº£n &amp; Lá»™ trĂ¬nh há»c cĂ¡ nhĂ¢n">
+            <div class="header-user-avatar-ring">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80" alt="Avatar Há»c ViĂªn" id="header-user-avatar">
+            </div>
+            <span class="font-black text-sm text-slate-900 tracking-tight whitespace-nowrap" id="header-user-name">DÆ°Æ¡ng ChĂ­ Thanh</span>
+            <svg class="w-4 h-4 text-slate-500 shrink-0 stroke-current ml-0.5" fill="none" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic App View Container -->
+      <main class="main-app-container flex-1 p-6" id="app-root">
+        <!-- Views will be mounted here dynamically via bundle.js / app.js -->
+      </main>
+
+      <!-- Footer -->
+      <footer class="text-center py-4 text-xs text-slate-400 border-t border-slate-200 bg-white mt-auto">
+        <p>Â© 2026 HANZO | THANH AUTOMATION</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal Quáº£n LĂ½ TĂ i Khoáº£n, Lá»™ TrĂ¬nh Há»c & Káº¿t Quáº£ Há»c CĂ¡ NhĂ¢n HĂ³a -->
+  <div id="user-profile-modal" class="modal-overlay hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-2xl overflow-hidden transform transition-all my-auto">
+      <!-- Modal Header (TĂ´ng mĂ u Ä‘á» tráº¯ng) -->
+      <div class="px-6 py-4 bg-gradient-to-r from-red-700 via-rose-600 to-red-600 text-white flex items-center justify-between border-b border-rose-800 shadow-md">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center text-lg font-black shadow-inner border border-white/30">
+            đŸ‘¤
+          </div>
+          <div>
+            <h3 class="font-black text-sm sm:text-base tracking-wide text-white drop-shadow-xs">Quáº£n LĂ½ TĂ i Khoáº£n &amp; Lá»™ TrĂ¬nh Há»c</h3>
+            <p class="text-2xs text-rose-100 font-medium">Há»‡ thá»‘ng cĂ¡ nhĂ¢n hĂ³a há»c táº­p HĂ¡n Ngá»¯ Hanzo</p>
+          </div>
+        </div>
+        <button id="btn-close-user-profile-modal" class="text-white/80 hover:text-white w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center font-bold text-sm transition" title="ÄĂ³ng">âœ•</button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="px-6 pt-3 bg-slate-50 border-b border-slate-200 flex items-center gap-2 overflow-x-auto text-xs font-bold">
+        <button class="tab-user-profile-btn active px-4 py-2.5 border-b-2 border-crimson text-crimson flex items-center gap-1.5 transition" data-tab="profile">
+          <span>đŸ‘¤</span> TĂ i Khoáº£n
+        </button>
+        <button class="tab-user-profile-btn px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition" data-tab="roadmap">
+          <span>đŸ—ºï¸</span> Lá»™ TrĂ¬nh Há»c CĂ¡ NhĂ¢n
+        </button>
+        <button class="tab-user-profile-btn px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 transition" data-tab="results">
+          <span>đŸ“</span> Káº¿t Quáº£ Há»c Táº­p
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="p-5 sm:p-6 space-y-6 max-h-[70vh] overflow-y-auto" id="user-profile-modal-body">
+        <!-- Dynamic Content rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Floating Mascot Companion Widget (Bottom-Right Corner with Toggle Button) -->
+  <div class="floating-mascot-widget" id="global-floating-mascot">
+    <div class="mascot-img-wrapper" id="mascot-image-wrapper" title="HĂ¡n Ngá»¯ Mascot">
+      <img src="./images/chibi_mascot.png" alt="Mascot HĂ¡n Ngá»¯ Chibi" id="mascot-img">
+    </div>
+    <button class="mascot-toggle-btn" id="btn-toggle-mascot" title="áº¨n Mascot">
+      <span id="mascot-toggle-icon">â¯</span>
+    </button>
+  </div>
+
+  <!-- Main Application Controller Bundle -->
+  <script src="./js/bundle.js?v=151.0&amp;t=20261001"></script>
+
+
+
+</body></html>
